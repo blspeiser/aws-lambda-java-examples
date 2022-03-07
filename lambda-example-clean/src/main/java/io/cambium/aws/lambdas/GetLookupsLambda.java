@@ -7,11 +7,11 @@ import java.util.List;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
-import io.cambium.api.LookupService;
-import io.cambium.api.impl.LookupServiceBean;
+import io.cambium.api.LookupsService;
 import io.cambium.types.models.LookupData;
 import io.cambium.types.requests.GetLookupsRequest;
 import io.cambium.types.responses.GetLookupsResponse;
+import io.cambium.utils.ObjectFactory;
 
 /**
  * GetLookupsLambda.
@@ -21,7 +21,7 @@ import io.cambium.types.responses.GetLookupsResponse;
  * @author Baruch Speiser, Cambium.
  */
 public class GetLookupsLambda implements RequestHandler<GetLookupsRequest, GetLookupsResponse> {
-  private static final LookupService service = new LookupServiceBean();
+  private static final LookupsService service = ObjectFactory.getLookupsService();
 
   /**
    * Retrieve a list of lookup options.
