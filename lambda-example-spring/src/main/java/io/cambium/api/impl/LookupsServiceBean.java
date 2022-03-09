@@ -8,23 +8,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import io.cambium.api.LookupService;
+import io.cambium.api.LookupsService;
 import io.cambium.persistence.LookupsRepository;
 import io.cambium.persistence.entities.LookupEntity;
 import io.cambium.types.models.LookupData;
 
 /**
- * LookupServiceBean.
+ * LookupsServiceBean.
  * 
- * @see io.cambium.api.LookupService 
+ * @see io.cambium.api.LookupsService 
  * @author Baruch Speiser, Cambium.
  */
 @Service
-public class LookupServiceBean implements LookupService {
+public class LookupsServiceBean implements LookupsService {
   @Autowired
   LookupsRepository repository;
   
-  /** @see io.cambium.api.LookupService#lookup(String) */
+  /** @see io.cambium.api.LookupsService#lookup(String) */
   public List<LookupData> lookup(String type) {
     List<LookupData> list;
     if(StringUtils.hasText(type)) {

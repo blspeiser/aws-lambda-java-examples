@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
-import io.cambium.api.LookupService;
+import io.cambium.api.LookupsService;
 import io.cambium.types.models.LookupData;
 import io.cambium.types.requests.GetLookupsRequest;
 import io.cambium.types.responses.GetLookupsResponse;
@@ -29,7 +29,7 @@ public class LookupsController {
   private static final Logger log = LoggerFactory.getLogger(LookupsController.class);
   
   @Autowired
-  private LookupService service;
+  private LookupsService service;
   
   @PostMapping
   public GetLookupsResponse getLookups(GetLookupsRequest request) {
