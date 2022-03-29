@@ -48,9 +48,7 @@ public class LookupsRepositoryBean implements LookupsRepository {
     } catch(Exception e) {
       throw new RuntimeException("Unexpected error", e);
     } finally {
-      DatabaseUtils.close(rs);
-      DatabaseUtils.close(stmt);
-      DatabaseUtils.close(conn);
+      DatabaseUtils.close(conn, stmt, rs);
     }
   }
 }

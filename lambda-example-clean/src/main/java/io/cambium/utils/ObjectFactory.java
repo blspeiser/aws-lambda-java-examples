@@ -13,8 +13,8 @@ import io.cambium.persistence.impl.LookupsRepositoryBean;
  * @author Baruch Speiser, Cambium.
  */
 public class ObjectFactory {
-  private static LookupsService lookupsService; 
-  private static LookupsRepository lookupsRepository = new LookupsRepositoryBean();
+  private static LookupsService lookupsService = null; 
+  private static LookupsRepository lookupsRepository = null;
 
   /** @return LookupsService implementation. */
   public static synchronized LookupsService getLookupsService() {

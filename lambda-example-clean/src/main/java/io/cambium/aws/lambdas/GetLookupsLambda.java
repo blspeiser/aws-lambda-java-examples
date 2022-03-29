@@ -49,11 +49,12 @@ public class GetLookupsLambda implements RequestHandler<GetLookupsRequest, GetLo
     if(null == context) {
       //just log to stderr, I guess
       System.err.println("Error during lookup:");
-      e.printStackTrace();
+      e.printStackTrace(System.err);
     } else {
       StringWriter sw = new StringWriter();
-      sw.append("Error during lookup:\n");
-      e.printStackTrace(new PrintWriter(sw));
+      PrintWriter pw = new PrintWriter(sw);
+      pw.println("Error during lookup:");
+      e.printStackTrace(pw);
       context.getLogger().log(sw.toString());
     }
   }

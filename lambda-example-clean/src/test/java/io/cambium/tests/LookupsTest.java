@@ -41,8 +41,7 @@ public class LookupsTest {
     stmt.execute("INSERT INTO LOOKUPS (TYPE, NAME, CODE) VALUES ('pets', 'cat',    'Felis catus')");
     stmt.execute("INSERT INTO LOOKUPS (TYPE, NAME, CODE) VALUES ('pets', 'dog',    'Canis lupus familiaris')");
     stmt.execute("INSERT INTO LOOKUPS (TYPE, NAME, CODE) VALUES ('pets', 'rabbit', 'Oryctolagus cuniculus domesticus')");
-    DatabaseUtils.close(stmt);
-    DatabaseUtils.close(conn);
+    DatabaseUtils.close(conn, stmt);
   }
   
   @Test

@@ -13,7 +13,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
  *
  */
 public class DataSourceFactory {
-  private static final String PROPERTY_PREFIX    = "io.cambium.persistence.";
+  private static final String PROPERTY_PREFIX    = "io.cambium.persistence";
   
   public static final String PROPERTY_DRIVER    = PROPERTY_PREFIX + ".driver";
   public static final String PROPERTY_URL       = PROPERTY_PREFIX + ".url";
@@ -23,7 +23,7 @@ public class DataSourceFactory {
   private static final String DRIVER    = System.getProperty(PROPERTY_DRIVER,   "org.h2.Driver");
   private static final String URL       = System.getProperty(PROPERTY_URL,      "jdbc:h2:mem:mydb");
   private static final String USERNAME  = System.getProperty(PROPERTY_USERNAME, "sa");
-  private static final String PASSWORD   = System.getProperty(PROPERTY_PASSWORD, "password");
+  private static final String PASSWORD  = System.getProperty(PROPERTY_PASSWORD, "password");
   
   private static DataSource dataSource;
   

@@ -41,5 +41,30 @@ public class DatabaseUtils {
     }
   }
 
+
+  /**
+   * Safely close database resources.
+   *  
+   * @param conn database connection
+   * @param stmt database statement
+   * @param rs   result set
+   */
+  public static void close(Connection conn, Statement stmt, ResultSet rs) {
+    close(rs);
+    close(stmt);
+    close(conn);
+  }
+  
+  /**
+   * Safely close database resources.
+   *  
+   * @param conn database connection
+   * @param stmt database statement
+   */
+  public static void close(Connection conn, Statement stmt) {
+    close(stmt);
+    close(conn);
+  }
+
   
 }

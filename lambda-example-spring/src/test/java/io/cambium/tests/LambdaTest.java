@@ -60,7 +60,7 @@ public class LambdaTest {
     assertEquals(Response.Status.OK.getStatusCode(), response.getStatusCode());
     assertFalse(response.isBase64Encoded());
     assertTrue(response.getBody().contains("lookups"));
-    assertTrue(response.getBody().contains("[]"));
+    assertTrue(response.getBody().contains("[]")); //we didn't prime the database here so the content should be an empty array
 
     assertTrue(response.getMultiValueHeaders().containsKey(HttpHeaders.CONTENT_TYPE));
     assertTrue(response.getMultiValueHeaders().getFirst(HttpHeaders.CONTENT_TYPE)
