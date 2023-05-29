@@ -3,6 +3,7 @@ package io.cambium.persistence.impl;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +46,7 @@ public class LookupsRepositoryBean implements LookupsRepository {
         list.add(lookup);
       }
       return list;
-    } catch(Exception e) {
+    } catch(SQLException e) {
       throw new RuntimeException("Unexpected error", e);
     } finally {
       DatabaseUtils.close(conn, stmt, rs);

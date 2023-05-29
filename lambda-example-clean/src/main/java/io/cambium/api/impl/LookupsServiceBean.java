@@ -16,7 +16,17 @@ import io.cambium.utils.StringUtils;
  * @author Baruch Speiser, Cambium.
  */
 public class LookupsServiceBean implements LookupsService {
-  private static final LookupsRepository repository = ObjectFactory.getLookupsRepository();
+  private final LookupsRepository repository;
+  
+  /** Constructor. */
+  public LookupsServiceBean() {
+    this(ObjectFactory.getLookupsRepository());
+  }
+  
+  /** @param repository */
+  public LookupsServiceBean(LookupsRepository repository) {
+    this.repository = repository;
+  }
 
   /** @see io.cambium.api.LookupsService#lookup(String) */
   public List<LookupData> lookup(String type) {
